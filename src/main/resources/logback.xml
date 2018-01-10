@@ -1,0 +1,25 @@
+<configuration debug="false">
+
+    <appender name="file-log" class="ch.qos.logback.core.FileAppender">
+        <file>logs/customer_invitation_log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+		    <pattern>%d{yyyyMMdd HH:mm:ss.SSS} [%thread] %-5level %logger{5} [%file:%line] - %msg%n</pattern>
+		</encoder>
+    </appender>
+    
+   <!-- Send debug messages to System.out -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- By default, encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+        <encoder>
+            <pattern>%d{yyyyMMdd HH:mm:ss.SS} [%thread] %-5level %logger{5} [%file:%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+   
+    <root level="info">
+        <appender-ref ref="file-log" />
+    </root>
+   
+    <!-- Sample logger format to turn on DEBUG at class level. -->
+    <!--  <logger name="com.aol.search.slm2.log.Slm2LogManager" level="DEBUG"/> -->
+    
+</configuration>
